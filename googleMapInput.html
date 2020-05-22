@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta charset="utf-8" />
+    <title>My Google Map Website</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+  <body>
+    <div>
+      <h1>This is my awesome website!</h1>
+      <h2>Enter the co-ordinates you would like to display</h2>
+      <form id="mapForm">
+        <input type="text" id="latitude" placeholder="Latitude" value=""></input>
+        <input type="text" id="longitude" placeholder="Longitude" value=""></input>
+        <button onclick="initMap()">Submit</button>
+      </form>
+      <div id="map">
+      </div>
+    </div>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_RrbaCrkgVO6Ov-zHXDK-4GsmcoZIt-U&callback=initMap&libraries=&v=weekly"></script>
+    <script type="text/javascript" src="./script3.js"></script>
+  </body>
+</html>
