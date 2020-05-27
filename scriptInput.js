@@ -1,30 +1,43 @@
-
 document.addEventListener('DOMContentLoaded', function(event) {
     initMap();
 }) 
 
 function initMap() {
-  console.log("123");
-  var myLatLng = {lat: -33.8552281, lng: 18.5078126};
-  var yourLatLng = {lat: -34.0218, lng: 18.4764773} 
-  //var lat = document.getElementById("latitude").value;
-  //var lng = document.getElementById("longitude").value; 
+    var center = new google.maps.LatLng(0,0);
 
-  var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 9,
-    center: myLatLng
-  });
-  console.log("var map");
+    var mapOptions = {
+        zoom: 3,
+        center: center,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
 
-  var marker = new google.maps.Marker({
-    position: myLatLng,
-    map: map,
-    title: 'Your marker'
-  });
-  console.log("456")
+    var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+    // DOM event listener for the center map form submit
+    google.maps.event.addDomListener(document.getElementById('mapForm'), 'submit', function(e) {
+        e.preventDefault();
+
+        // Get lat and lng values from input fields
+        var lat = document.getElementById('lat').value;
+        var lng = document.getElementById('lng').value;
+
+        // Replace input values
+        document.getElementById('lat').value = lat;
+        document.getElementById('lng').value = lng;
+
+        // Create LatLng object
+        var mapCenter = new google.maps.LatLng(lat, lng);
+
+        new google.maps.Marker({
+
+            position: mapCenter,
+            title: 'Marker title',
+            map: map
+        });
+
+        // Center map
+        map.setCenter(mapCenter);
+    });
 }
 
-//function LatLng() {
-//  document.getElementById("mapForm").submit();
-//}
- 
+initMap();
