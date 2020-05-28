@@ -2,9 +2,16 @@ document.addEventListener('DOMContentLoaded', function(event) {
     initMap();
 })
 
-var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+let center = new google.maps.LatLng(0,0);
 
-var map, infoWindow;
+let mapOptions = {
+    zoom: 3,
+    center: center,
+};
+
+let map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+let infoWindow;
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: 0, lng: 0},
@@ -15,7 +22,7 @@ function initMap() {
     // Try HTML5 geolocation.
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function(position) {
-            var pos = {
+            let pos = {
                 lat: position.coords.latitude,
                 lng: position.coords.longitude
             };
@@ -45,19 +52,6 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.open(map);
 }
 
-document.addEventListener('DOMContentLoaded', function(event) {
-    addMarker();
-})
-
-var center = new google.maps.LatLng(0,0);
-
-var mapOptions = {
-    zoom: 3,
-    center: center,
-};
-
-var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-
 function addMarker() {
 
     // DOM event listener for the center map form submit
@@ -65,15 +59,15 @@ function addMarker() {
         e.preventDefault();
 
         // Get lat and lng values from input fields
-        var lat = document.getElementById('lat').value;
-        var lng = document.getElementById('lng').value;
+        let lat = document.getElementById('lat').value;
+        let lng = document.getElementById('lng').value;
 
         // Replace input values
         document.getElementById('lat').value = lat;
         document.getElementById('lng').value = lng;
 
         // Create LatLng object
-        var mapCenter = new google.maps.LatLng(lat, lng);
+        let mapCenter = new google.maps.LatLng(lat, lng);
 
         new google.maps.Marker({
 
