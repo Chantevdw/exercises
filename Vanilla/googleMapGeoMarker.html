@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Google Map Website</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+  <body>
+    <div>
+      <h1>This is my awesome website!</h1>
+      <h2>Enter the coordinates you would like to display</h2>
+      <form id="mapForm">
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <input type="text" class="form-control" id="lat" placeholder="Latitude" value=""></input>
+          </div>
+          <div class="form-group col-md-4">
+            <input type="text" class="form-control" id="lng" placeholder="Longitude" value=""></input>
+          </div>
+        </div>
+        <div class="form-group row">
+          <button type="submit" class="btn btn-primary" id="mapForm" >Add Marker</button>
+          <!-- <input type="submit" id="submit-btn" value="Show Marker"></input>-->
+        </div>
+      </form>
+      <div id="map">
+      </div>
+    </div>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_RrbaCrkgVO6Ov-zHXDK-4GsmcoZIt-U&callback=initMap&libraries=&v=weekly"></script>
+    <script type="text/javascript" src="./script_2.js"></script>
+  </body>
+</html>
