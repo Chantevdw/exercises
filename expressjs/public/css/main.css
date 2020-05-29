@@ -1,10 +1,15 @@
 body {
   padding-top: 50px;
 }
-.starter-template {
-  padding: 40px 15px;
-  text-align: center;
+
+input {
+    margin-top: 10px;
+    margin-right: 20px;
+    padding: 5px 15px;
+    border-radius: 5px;
 }
-#headshot {
-    width: 500px;
+
+.btn-default {
+    background: #5cb85c;
+    border-color: #5cb85c;
 }
