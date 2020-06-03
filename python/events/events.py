@@ -1,33 +1,24 @@
 eventspath = "events.log"
 with open(eventspath) as file:
     records = {}
-    # index = 15
+    index = 10
     for row in file:
         row = row.rstrip('\n').split(" ")
-        print(row[2])
-
-
-
-
-
-
-        # b = [j[0] for i in records for j in i.items()]
-        # for k in list(set(b)):
-        #     print("{0}: {1}".format(k, b.count(k))
+        # print(row[2])
+        records[row[2]] = 1
+        #records = row.count('8')
+        records = {x:row[2].count(x) for x in row[2]}
+        #print(records)
+        sorted_list = sorted(records.items(), key=lambda i:i[1], reverse=True)
+        # for y in sorted_list:
+        #     print(sorted_list[:11])
+        print(len(sorted_list))
+        #break
 
         # records[row[2]] = 1
         # print(records)
         # break
 
-    # d = [{"abc": "movies"}, {"abc": "sports"}, {"abc": "music"}, {"xyz": "music"}, {"pqr": "music"}, {"pqr": "movies"},
-    #      {"pqr": "sports"}, {"pqr": "news"}, {"pqr": "sports"}]
-    #
-    # # fetch keys
-    # b = [j[0] for i in d for j in i.items()]
-    #
-    # # print output
-    # for k in list(set(b)):
-    #     print("{0}: {1}".format(k, b.count(k))
 
 
 #count user ID's
