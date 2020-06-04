@@ -12,6 +12,8 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.get('/', (req, res) => res.render('index'));
 
+app.get('/', (req, res) => res.render('home'));
+
 
 app.post('/login', function(request, response) {
     const validUsername = "Chante";
@@ -24,7 +26,7 @@ app.post('/login', function(request, response) {
         response.redirect('/home');
         response.end();
     } else {
-        response.send('Please enter Username and Password!');
+        response.send('Invalid Username or Password, please try again');
         response.end();
     }
 });
