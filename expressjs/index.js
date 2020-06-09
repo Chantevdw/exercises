@@ -23,7 +23,7 @@ app.get('/', (req, res) => res.render('index'));
 /**
  * Our home page
  */
-app.get('/', (req, res) => res.render('home'));
+app.get('/home', (req, res) => res.render('home'));
 
 /**
  * API Login call
