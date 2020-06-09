@@ -6,29 +6,24 @@
 
 from collections import Counter
 
-eventspath = "events.log"
-with open(eventspath) as file:
-    records = {}
+with open("data/events.log", 'r', ) as file:
+    valid_records = {}
+
     for row in file:
+
         row = row.rstrip('\n').split(" ")
-        # print(row[2])
-        #records[row[2]] = 1
-        results = Counter(row[2]).most_common(10)
-        print(results)
+        #Check is entry exists. If no add record
+        #if already exists add entry +1
+        if not row[2] in valid_records:
+            valid_records[row[2]] = 1
 
-        # records = {x:row[2].count(x) for x in row[2]}
-        # #print(records)
-        # sorted_list = sorted(records.items(), key=lambda i:i[1], reverse=True)
-        # # for y in sorted_list:
-        # #     print(sorted_list[:11])
-        # print(len(sorted_list))
-        # #break
-        #
-        # # records[row[2]] = 1
-        # # print(records)
-        # # break
+        else:
+            valid_records[row[2]] += 1
 
+    # top = sorted(valid_records.items(), key=lambda x: x[1], reverse=True)[:10]
+    #Count entries
+    counted_valid_records = Counter(valid_records)
+    #Sort Entries
+    top10 = counted_valid_records.most_common(10)
 
-
-#count user ID's
-#print top 10
+    print(top10)
