@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
+@import url("components/container.css");
+@import url("components/avatar.css");
+@import url("components/button.css");
+@import url("components/banner.css");
+
+body {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+}
+
+h1, h2, h3 {
+    font-family: "Abril Fatface", serif;
+}
+
+a {
+    text-decoration: none;
+}
